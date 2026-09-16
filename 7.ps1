@@ -1,6 +1,6 @@
 # ============================================================
 
-$installDir  = Join-Path $env:LOCALAPPDATA "Windows"
+$installDir  = Join-Path $env:LOCALAPPDATA "MeuScript"
 $installPath = Join-Path $installDir "7.ps1"
 
 # Cria a pasta de instalação
@@ -25,7 +25,7 @@ $runCommand = 'powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy By
 
 New-ItemProperty `
     -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" `
-    -Name "Windows" `
+    -Name "MeuScript" `
     -Value $runCommand `
     -PropertyType String `
     -Force | Out-Null
